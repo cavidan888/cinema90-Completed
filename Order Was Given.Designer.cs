@@ -42,6 +42,7 @@
             this.AMovieName = new System.Windows.Forms.Label();
             this.ASalonName = new System.Windows.Forms.Label();
             this.ASeansName = new System.Windows.Forms.Label();
+            this.ShowToUser = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ownerName
@@ -177,11 +178,22 @@
             this.ASeansName.TabIndex = 13;
             this.ASeansName.Text = "label7";
             // 
+            // ShowToUser
+            // 
+            this.ShowToUser.AutoSize = true;
+            this.ShowToUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowToUser.Location = new System.Drawing.Point(208, 340);
+            this.ShowToUser.Name = "ShowToUser";
+            this.ShowToUser.Size = new System.Drawing.Size(47, 15);
+            this.ShowToUser.TabIndex = 14;
+            this.ShowToUser.Text = "label1";
+            // 
             // Order_Was_Given
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ShowToUser);
             this.Controls.Add(this.ASeansName);
             this.Controls.Add(this.ASalonName);
             this.Controls.Add(this.AMovieName);
@@ -198,7 +210,6 @@
             this.Controls.Add(this.ownerName);
             this.Name = "Order_Was_Given";
             this.Text = "Order_Was_Given";
-            
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +231,6 @@
         private System.Windows.Forms.Label ASeansName;
         private System.Windows.Forms.Label ownerMovieName;
         public System.Windows.Forms.Label AMovieName;
+        public System.Windows.Forms.Label ShowToUser;
     }
 }

@@ -65,16 +65,48 @@ namespace letsCinema
         }
         public void clicked(object sender, EventArgs e)
         {
-            var btn = sender as Button; // click olunan obj obyektine button imis kimi davran
 
-            btn.BackColor = Color.Red;
-            btn.Enabled = false;
-            seatList.Add(btn);
-            textBox1.Text = "";
-            foreach (Button item in seatList)
+            Button clickedItem = (Button)sender;
+            bool say = false;
+
+
+            foreach (var items in seatList)
             {
-                textBox1.Text += item.Text + ",";
+                if (items == clickedItem)
+                {
+                    if (items.BackColor == Color.Red)
+                    {
+                        say = true;
+                        items.BackColor = Color.Black;
+
+
+                    }
+                }
+
             }
+            seatList.Remove(clickedItem);
+            textBox1.Text = "";
+
+            if (say == false)
+            {
+                clickedItem.BackColor = Color.Red;
+                seatList.Add(clickedItem);
+
+            }
+
+            //var btn = sender as Button; // click olunan obj obyektine button imis kimi davran
+
+            //btn.BackColor = Color.Red;
+            //btn.Enabled = false;
+            //seatList.Add(btn);
+            //textBox1.Text = "";
+            //foreach (Button item in seatList)
+            //{
+            //    textBox1.Text += item.Text + ",";
+            //}
+
+
+
             if (Welcome.sayClick1 == true)
             {
                 Qiymet2 += 5;
@@ -97,7 +129,11 @@ namespace letsCinema
                 MessageBox.Show("Closed");
             }
 
+            foreach (Button item in seatList)
+            {
+                textBox1.Text += item.Text + ",";
 
+            }
         }
 
         private void reserveSeats2_Click(object sender, EventArgs e)

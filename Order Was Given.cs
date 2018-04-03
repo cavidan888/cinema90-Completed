@@ -46,7 +46,8 @@ namespace letsCinema
             {
                 seats += item1.Text + ",";
                 ABiletNo.Text = seats;
-                APrice.Text = Salon_One.Qiymet.ToString();
+                APrice.Text = "Total Price " + Salon_One.Qiymet.ToString() + "Azn";
+                ShowToUser.Text = "Salam " + ReserveSeats.Ad + " " + ReserveSeats.Soyad + " Sizin " + Movies.moviesName[Welcome.SelectedMovieNum] + " Filmine Sifariwleriniz Verildi";
             }
 
 
@@ -55,7 +56,8 @@ namespace letsCinema
             {
                 seats += item2.Text + ",";
                 ABiletNo.Text = seats;
-                APrice.Text = Salon_Two.Qiymet2.ToString();
+                APrice.Text = "Total Price " + Salon_Two.Qiymet2.ToString() + "Azn";
+                ShowToUser.Text = "Salam " + ReserveSeats.Ad + " " + ReserveSeats.Soyad + " Sizin " + Movies.moviesName[Welcome.SelectedMovieNum] + " Filmine Sifariwleriniz Verildi";
             }
 
 
@@ -63,7 +65,8 @@ namespace letsCinema
             {
                 seats += item3.Text + ",";
                 ABiletNo.Text = seats;
-                APrice.Text = Salon_Three.Qiymet3.ToString();
+                APrice.Text = "Total Price " + Salon_Three.Qiymet3.ToString() + "Azn";
+                ShowToUser.Text = "Salam " + ReserveSeats.Ad + " " + ReserveSeats.Soyad + " Sizin " + Movies.moviesName[Welcome.SelectedMovieNum] + " Filmine Sifariwleriniz Verildi";
             }
 
 
@@ -71,7 +74,8 @@ namespace letsCinema
             {
                 seats += item4.Text + ",";
                 ABiletNo.Text = seats;
-                APrice.Text = Salon_Four.Qiymet4.ToString();
+                APrice.Text = "Total Price " + Salon_Four.Qiymet4.ToString() + "Azn";
+                ShowToUser.Text = "Salam " + ReserveSeats.Ad + " " + ReserveSeats.Soyad + " Sizin " + Movies.moviesName[Welcome.SelectedMovieNum] + " Filmine Sifariwleriniz Verildi";
             }
 
           
@@ -101,7 +105,13 @@ namespace letsCinema
             {
                 MessageBox.Show("err");
             }
+
+
+
+           
+
         }
+
 
       
     }

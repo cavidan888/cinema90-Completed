@@ -21,6 +21,8 @@ namespace letsCinema
         public int seatNumber = 1;
         public static double Qiymet;
         public static bool birdir = false;
+        public int count2 = 0;
+        
 
 
         public Salon_One()
@@ -87,15 +89,56 @@ namespace letsCinema
 
           
         }
-
+       
         public void clicked(object sender, EventArgs e)
         {
-            var btn = sender as Button; // click olunan obj obyektine button imis kimi davran
+            Button clickedItem = (Button)sender;
+            bool say = false;
 
-            btn.BackColor = Color.Red;
-            btn.Enabled = false;
-            seatList.Add(btn);
+           
+            foreach (var items in seatList)
+            {
+                if (items == clickedItem)
+                {
+                    if (items.BackColor == Color.Red)
+                    {
+                        say = true;
+                        items.BackColor = Color.Black;
+                       
+                        
+                    }
+                }
+               
+            }
+            seatList.Remove(clickedItem);
             textBox1.Text = "";
+
+            if (say == false)
+            {
+                clickedItem.BackColor = Color.Red;
+                seatList.Add(clickedItem);
+                
+            }
+        
+
+            //var btn = sender as Button; // click olunan obj obyektine button imis kimi davran
+
+            //btn.BackColor = Color.Red;
+            
+            //seatList.Add(btn);
+            //textBox1.Text = "";
+
+            //count2++;
+
+
+            //if (count2 > 1)
+            //{
+            //    btn.BackColor = Color.Black;
+            //    count2 = 0;
+            //    seatList.Remove(btn);
+            //    textBox1.Text = "";
+            //}
+
 
             if (Welcome.sayClick1 == true)
             {
@@ -121,10 +164,11 @@ namespace letsCinema
 
             foreach (Button item in seatList)
             {
-                textBox1.Text += item.Text + ",";
+                textBox1.Text += item.Text + ","; 
+
             }
-           
-            
+
+
 
         }
 
@@ -132,6 +176,7 @@ namespace letsCinema
         {
             ReserveSeats rs = new ReserveSeats();
             rs.Show();
+            
         }
     }
 

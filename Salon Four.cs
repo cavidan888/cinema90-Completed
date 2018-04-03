@@ -70,12 +70,37 @@ namespace letsCinema
 
         public void clicked(object sender, EventArgs e)
         {
-            var btn = sender as Button; // click olunan obj obyektine button imis kimi davran
+            Button clickedItem = (Button)sender;
+            bool check = false;
 
-            btn.BackColor = Color.Red;
-            btn.Enabled = false;
-            seatList.Add(btn);
+
+            foreach (var items in seatList)
+            {
+                if (items == clickedItem)
+                {
+                    if (items.BackColor == Color.Red)
+                    {
+                        check = true;
+                        items.BackColor = Color.Black;
+
+
+                    }
+                }
+
+            }
+            seatList.Remove(clickedItem);
             textBox1.Text = "";
+
+            if (check == false)
+            {
+                clickedItem.BackColor = Color.Red;
+                seatList.Add(clickedItem);
+
+            }
+
+
+
+
 
             if (Welcome.sayClick1 == true)
             {
@@ -105,6 +130,7 @@ namespace letsCinema
             }
 
 
+           
 
         }
 
